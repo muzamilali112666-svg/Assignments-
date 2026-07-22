@@ -1,0 +1,207 @@
+# ==========================================
+# 1. Circle Class
+# ==========================================
+import math
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+
+c = Circle(5)
+print("Area:", c.area())
+print("Perimeter:", c.perimeter())
+
+
+# ==========================================
+# 2. Person Class
+# ==========================================
+from datetime import date
+
+class Person:
+    def __init__(self, name, country, birth_year, birth_month, birth_day):
+        self.name = name
+        self.country = country
+        self.birth_date = date(birth_year, birth_month, birth_day)
+
+    def age(self):
+        today = date.today()
+        age = today.year - self.birth_date.year
+        if (today.month, today.day) < (self.birth_date.month, self.birth_date.day):
+            age -= 1
+        return age
+
+p = Person("Ali", "Pakistan", 2005, 6, 15)
+print("Name:", p.name)
+print("Country:", p.country)
+print("Age:", p.age())
+
+
+# ==========================================
+# 3. Calculator Class
+# ==========================================
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+    def multiply(self, a, b):
+        return a * b
+
+    def divide(self, a, b):
+        if b != 0:
+            return a / b
+        return "Cannot divide by zero"
+
+calc = Calculator()
+print("Addition:", calc.add(10, 5))
+print("Subtraction:", calc.subtract(10, 5))
+print("Multiplication:", calc.multiply(10, 5))
+print("Division:", calc.divide(10, 5))
+
+
+# ==========================================
+# 4. List of 15 Student Names
+# ==========================================
+students = [
+    "Ali", "Ahmed", "Sara", "Ayesha", "Usman",
+    "Hamza", "Zain", "Fatima", "Bilal", "Hina",
+    "Noor", "Maryam", "Saad", "Areeba", "Daniyal"
+]
+
+for name in students:
+    print(name)
+
+
+# ==========================================
+# 5. Print Even Numbers
+# ==========================================
+numbers = list(range(1, 11))
+
+print("Even Numbers:")
+for num in numbers:
+    if num % 2 == 0:
+        print(num)
+
+
+# ==========================================
+# 6. Largest and Smallest Without max() & min()
+# ==========================================
+nums = [12, 45, 7, 23, 56]
+
+largest = nums[0]
+smallest = nums[0]
+
+for n in nums:
+    if n > largest:
+        largest = n
+    if n < smallest:
+        smallest = n
+
+print("Largest:", largest)
+print("Smallest:", smallest)
+
+
+# ==========================================
+# 7. Count "Apple"
+# ==========================================
+fruits = ["Apple", "Banana", "Apple", "Orange", "Apple"]
+
+count = 0
+for fruit in fruits:
+    if fruit == "Apple":
+        count += 1
+
+print("Apple appears:", count, "times")
+
+
+# ==========================================
+# 8. Sort List
+# ==========================================
+numbers = [8, 2, 5, 1, 9, 4]
+
+ascending = sorted(numbers)
+descending = sorted(numbers, reverse=True)
+
+print("Ascending:", ascending)
+print("Descending:", descending)
+
+
+# ==========================================
+# 9. Copy One List into Another
+# ==========================================
+list1 = [1, 2, 3, 4, 5]
+list2 = list1.copy()
+
+print("List 1:", list1)
+print("List 2:", list2)
+
+
+# ==========================================
+# 10. Nested List
+# ==========================================
+students = [
+    ["Ali", 20],
+    ["Ahmed", 18],
+    ["Sara", 19]
+]
+
+print("Student Names:")
+for student in students:
+    print(student[0])
+
+print("Student Ages:")
+for student in students:
+    print(student[1])
+
+
+# ==========================================
+# 11. List Statistics
+# ==========================================
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+total = len(numbers)
+sum_numbers = sum(numbers)
+average = sum_numbers / total
+
+largest = numbers[0]
+smallest = numbers[0]
+
+for n in numbers:
+    if n > largest:
+        largest = n
+    if n < smallest:
+        smallest = n
+
+print("Total Numbers:", total)
+print("Sum:", sum_numbers)
+print("Average:", average)
+print("Maximum:", largest)
+print("Minimum:", smallest)
+
+
+# ==========================================
+# 12. List Operations
+# ==========================================
+my_list = [10, 20, 30]
+
+print("Original List:", my_list)
+
+my_list.append(40)
+print("After Append:", my_list)
+
+my_list.insert(1, 15)
+print("After Insert:", my_list)
+
+my_list.remove(20)
+print("After Remove:", my_list)
+
+my_list.pop()
+print("After Pop:", my_list)
